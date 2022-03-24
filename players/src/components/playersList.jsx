@@ -16,6 +16,7 @@ export const List=()=>{
       setFormData(formData.filter(function (el) {
         return el.TName === ser || el.PFName === ser 
       }));
+      setSer("");
       }
       const [ser,setSer]=useState("");
       function handleChange(e){
