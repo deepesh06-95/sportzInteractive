@@ -9,9 +9,19 @@ function importAll(r) {
   
   const images = importAll(require.context('./playerImages', false, /\.(png|jpe?g|svg)$/));
 
+
 export const List=()=>{
     const[formData,setFormData]=useState([])
-
+    function search(){
+      setFormData(formData.filter(function (el) {
+        return el.TName === ser || el.PFName === ser 
+      }));
+      }
+      const [ser,setSer]=useState("");
+      function handleChange(e){
+        e.preventDefault();
+        setSer(e.target.value);
+        }
     const getplayer=async()=>{
       const response=await fetch("https://api.npoint.io/20c1afef1661881ddc9c");
       const ex=await response.json();
@@ -29,7 +39,7 @@ export const List=()=>{
   return (
       
       <>
-      <input placeholder='Search player' value="player"></input>
+      <input placeholder='Search player' value={ser} type="text" onChange={handleChange}></input>
       <button onClick={search}>Search</button>
       {formData.map((e,i)=>{
           return (
