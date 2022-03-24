@@ -1,0 +1,5 @@
+.box {
+  display: grid;
+  grid-template-columns: 40% 60%;
+  margin: 2%;
+}
