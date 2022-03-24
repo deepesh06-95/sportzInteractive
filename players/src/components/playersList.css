@@ -1,5 +1,37 @@
+* {
+  color: white;
+  background-color: #dab88b;
+}
 .box {
   display: grid;
-  grid-template-columns: 40% 60%;
+  grid-template-columns: 30% 70%;
   margin: 2%;
+  border: 2px solid #f3e9dd;
+}
+.box:hover {
+  border: 2px solid #3a3845;
+}
+.images {
+  width: 300px;
+  border: 2px solid red;
+  padding: 2%;
+}
+input {
+  width: 100%;
+  font-size: 25px;
+  padding: 2%;
+}
+.search {
+  display: grid;
+  grid-template-columns: 80% 20%;
+}
+button {
+  background-color: blueviolet;
+  color: white;
+}
+@media screen and (max-width: 480px) {
+  .box {
+    display: flex;
+    flex-direction: row;
+  }
 }

@@ -39,19 +39,22 @@ export const List=()=>{
   return (
       
       <>
+      <div className='search'>
       <input placeholder='Search player' value={ser} type="text" onChange={handleChange}></input>
       <button onClick={search}>Search</button>
+      </div>
+     
       {formData.map((e,i)=>{
           return (
           <div key={i} className="box">
-              <img src={images[`${e.Id}.jpg`]} alt=" Sorry! image not available"/>
-             <div>
+              <img src={images[`${e.Id}.jpg`]} alt=" Sorry! image not available" className='images'/>
+             <div className='details'>
              <h2>Player's Name {e.PFName}</h2>
               
-              <h4>Skills {e.SkillDesc}</h4>
+              <h4>Skills - {e.SkillDesc}</h4>
              
               <h4>Value - ${e.Value}</h4>
-              <h4>Upcoming Matches - </h4>
+              <h4>Upcoming Matches  </h4>
               <div>
                 {e.UpComingMatchesList.map((mat,i)=>(
                   <div key={i}>
